@@ -13,4 +13,9 @@ WHERE last_name LIKE 'e%'
 
 SELECT last_name
 FROM employees
+WHERE last_name LIKE 'e%'
+  AND last_name LIKE '%e';
+
+SELECT last_name
+FROM employees
 WHERE last_name LIKE '%q%';
