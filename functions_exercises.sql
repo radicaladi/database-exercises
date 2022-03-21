@@ -13,7 +13,7 @@ WHERE last_name LIKE 'e%'
    OR last_name LIKE '%e'
 ORDER BY emp_no DESC;
 
-SELECT last_name
+SELECT CONCAT(last_name, ' ', first_name)
 FROM employees
 WHERE last_name LIKE 'e%'
   AND last_name LIKE '%e';
