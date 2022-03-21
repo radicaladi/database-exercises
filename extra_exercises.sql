@@ -67,3 +67,22 @@ WHERE gender = 'M'
 GROUP BY birth_date
 ORDER BY COUNT(*) DESC;
 # 11 July 1953 (63)
+
+# what is the most common hire date for female and male employees?
+SELECT hire_date, COUNT(*)
+FROM employees
+# WHERE gender = 'f'
+WHERE gender = 'm'
+GROUP BY hire_date
+ORDER BY COUNT(*) DESC;
+# female = 15 July 1985 (61)
+# male = 20 June 1985 (88)
+
+# what is the longest last name of someone born on March 8, 1952?
+SELECT last_name, length(last_name)
+FROM employees
+WHERE birth_date = date('1952-03-08')
+GROUP BY last_name
+ORDER BY CHAR_LENGTH(last_name) DESC;
+# 4 NAMES TIED (13 char length)
+# Bernardinello, Pietracaprina, Schlegelmilch, Chandrasekhar
