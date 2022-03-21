@@ -4,7 +4,8 @@ SELECT first_name, gender
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya')
    OR first_name = 'Maya'
-    AND gender = 'male';
+    AND gender = 'male'
+ORDER BY first_name;
 
 SELECT last_name
 FROM employees
