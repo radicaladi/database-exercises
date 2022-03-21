@@ -30,6 +30,7 @@ WHERE month(birth_date) = 12
 
 SELECT *
 FROM employees
-WHERE year(hire_date) BETWEEN 1990 AND 1999
-  AND month(birth_date) = 12
-  AND day(birth_date) = 25;
+WHERE month(birth_date) = 12
+AND day(birth_date) = 25
+AND year(hire_date) BETWEEN 1990 AND 1999
+ORDER BY hire_date DESC;
