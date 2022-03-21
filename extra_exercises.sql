@@ -28,3 +28,19 @@ FROM titles
 WHERE title = 'Engineer'
 ORDER BY emp_no desc;
 # emp_no 499999
+
+# what are the names of the 10 most recently hired employees who identified as female in the company?
+SELECT hire_date, gender, CONCAT(first_name, ' ', last_name) AS full_name
+FROM employees
+WHERE gender = 'f'
+ORDER BY hire_date DESC
+LIMIT 10;
+# Hideyuki, Volkmar, Jaana, Ennio, Xuejun, Seshu, Randi, Adil, Manton, Garnik
+
+# the first 10?
+SELECT hire_date, gender, CONCAT(first_name, ' ', last_name) AS full_name
+FROM employees
+WHERE gender = 'f'
+ORDER BY hire_date ASC
+LIMIT 10;
+#  Peternela, Shirish, Krassimir, Tonny, Isamu, Gian, Zdislav, Shir, Divier, Shounak
