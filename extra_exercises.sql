@@ -44,3 +44,26 @@ WHERE gender = 'f'
 ORDER BY hire_date ASC
 LIMIT 10;
 #  Peternela, Shirish, Krassimir, Tonny, Isamu, Gian, Zdislav, Shir, Divier, Shounak
+
+# what is the most common birthday?
+SELECT birth_date, COUNT(*)
+FROM employees
+GROUP BY birth_date
+ORDER BY COUNT(*) DESC;
+#  08 March 1952 (95)
+
+# what is the most common  birthday for employees who identified as female?
+SELECT birth_date, COUNT(*)
+FROM employees
+WHERE gender = 'f'
+GROUP BY birth_date
+ORDER BY COUNT(*) DESC;
+# 12 Oct 1953 (49)
+
+# how about vs. those who identified as male?
+SELECT birth_date, COUNT(*)
+FROM employees
+WHERE gender = 'M'
+GROUP BY birth_date
+ORDER BY COUNT(*) DESC;
+# 11 July 1953 (63)
