@@ -28,7 +28,7 @@ FROM employees
 WHERE month(birth_date) = 12
   AND day(birth_date) = 25;
 
-SELECT *
+SELECT DATEDIFF(now(), hire_date)
 FROM employees
 WHERE month(birth_date) = 12
 AND day(birth_date) = 25
