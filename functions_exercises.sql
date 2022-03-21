@@ -22,3 +22,9 @@ SELECT last_name
 FROM employees
 WHERE last_name LIKE '%q%'
   AND last_name NOT LIKE '%qu%';
+
+SELECT *
+FROM employees
+WHERE month(birth_date) = 12
+  AND day(birth_date) = 25;
+
