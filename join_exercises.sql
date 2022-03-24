@@ -13,3 +13,10 @@ FROM employees as e
          JOIN dept_emp as employee_no ON employee_no.emp_no = e.emp_no
          JOIN dept_manager as manager ON manager.emp_no = employee_no.emp_no
          JOIN departments as d ON manager.dept_no = d.dept_no;
+
+SELECT d.dept_name, CONCAT(e.first_name, ' ', e.last_name) AS department_manager
+FROM employees as e
+         JOIN dept_emp as employee_no ON employee_no.emp_no = e.emp_no
+         JOIN dept_manager as manager ON manager.emp_no = employee_no.emp_no
+         JOIN departments as d ON manager.dept_no = d.dept_no
+WHERE e.gender = 'F';
