@@ -20,3 +20,12 @@ FROM employees as e
          JOIN dept_manager as manager ON manager.emp_no = employee_no.emp_no
          JOIN departments as d ON manager.dept_no = d.dept_no
 WHERE e.gender = 'F';
+
+SELECT title, COUNT(titles.emp_no)
+FROM titles
+         JOIN dept_emp AS de ON titles.emp_no = de.emp_no
+         JOIN departments as dept ON de.dept_no = dept.dept_no
+WHERE dept.dept_name = 'Customer Service'
+  AND titles.to_date = '9999-01-01'
+  AND de.to_date = '9999-01-01'
+GROUP BY titles.title;
