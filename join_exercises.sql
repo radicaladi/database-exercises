@@ -29,3 +29,12 @@ WHERE dept.dept_name = 'Customer Service'
   AND titles.to_date = '9999-01-01'
   AND de.to_date = '9999-01-01'
 GROUP BY titles.title;
+
+SELECT  d.dept_name AS department_name, CONCAT(e.first_name, ' ', e.last_name) AS dept_manager, s.salary AS salary
+FROM departments as d
+         JOIN dept_manager ON dept_manager.dept_no = d.dept_no
+         JOIN employees as e ON e.emp_no = dept_manager.emp_no
+         JOIN salaries as s ON e.emp_no = s.emp_no
+WHERE dept_manager.to_date = '9999-01-01'
+  AND s.to_date = '9999-01-01'
+ORDER BY d.dept_name;
